@@ -1,7 +1,7 @@
 # Provide a local repo to install the myri_snf pkg
 
-[JOSHTOWN]
-name=JOSHTOWN
+[local]
+name=local
 baseurl=file:///share/repos/RPMS
 enabled=1
 countme=1
