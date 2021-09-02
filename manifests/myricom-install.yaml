@@ -8,6 +8,10 @@ tmp-is-dir: true
 machineid-compat: false
 
 packages:
+  - gcc
+  - kernel-devel
+  - glibc
+  - libpcap
   - myri_snf
 
 postprocess:
