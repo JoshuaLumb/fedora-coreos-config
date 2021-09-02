@@ -1,0 +1,22 @@
+# Installs dependencies for the Myricom SNF drivers then downloads and installs those drivers.
+
+# Modern defaults we want
+boot-location: modules
+tmp-is-dir: true
+
+# Required by Ignition, and makes the system not compatible with Anaconda
+machineid-compat: false
+
+packages:
+  - curl
+
+postprocess:
+  # Download and install Myricom SNF 3 drivers.
+  - |
+    #!/usr/bin/env bash
+    echo "Installing SNF"
+    BASE_DIR=$(pwd)
+    cd /tmp
+    curl "https://cspi-sdrive2.s3-accelerate.amazonaws.com/a0i5b000008hpPqAAI%2Fmyri_snf-3.0.25.50927_0b38e91d6.rhel-3486.x86_64.rpm?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27myri_snf-3.0.25.50927_0b38e91d6.rhel-3486.x86_64.rpm&AWSAccessKeyId=AKIAIHVRPT3ZSGYDYJJA&Expires=2147483647&Signature=Davbd9HPnqAF2P3I68mo412Kg8E%3D" -o myri_snf-3.0.25.50927_0b38e91d6.rhel-3486.x86_64.rpm
+    rpm -i "myri_snf-3.0.25.50927_0b38e91d6.rhel-3486.x86_64.rpm"
+    cd $BASE_DIR
