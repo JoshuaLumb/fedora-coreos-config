@@ -1,0 +1,12 @@
+# Provide a local repo to install the myri_snf pkg
+
+[JOSHTOWN]
+name=JOSHTOWN
+baseurl=file:///share/repos/RPMS
+enabled=1
+countme=1
+metadata_expire=6h
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+skip_if_unavailable=False
