@@ -15,7 +15,8 @@ repos:
   # GitHub Action.
   - fedora
   - fedora-updates
-
+  - local
+ 
 add-commit-metadata:
   fedora-coreos.stream: testing-devel
 

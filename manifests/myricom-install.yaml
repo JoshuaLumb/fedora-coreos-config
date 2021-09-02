@@ -7,9 +7,6 @@ tmp-is-dir: true
 # Required by Ignition, and makes the system not compatible with Anaconda
 machineid-compat: false
 
-repos:
-  - local
-
 packages:
   - myri_snf
 
